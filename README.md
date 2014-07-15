@@ -27,3 +27,7 @@ brew doctor
 brew link --force ncurses
 gem install ncursesw
 ```
+
+## License
+
+See [UNLICENSE](UNLICENSE).
