@@ -16,7 +16,8 @@ module RbTetris
       WHITE = 7
     end
 
-    # Public: Initialize a new Term. Initialize color pairs if Ncurses has colors.
+    # Public: Initialize a new Term. Initialize color pairs if Ncurses has
+    #         colors.
     def initialize
       Ncurses.initscr
       initialize_color if Ncurses.has_colors?
@@ -41,14 +42,17 @@ module RbTetris
     # Internal: Initialize color pairs for Ncurses.
     def initialize_color
       Ncurses.start_color
-      Ncurses.init_pair(Color::RED, Ncurses::COLOR_RED, Ncurses::COLOR_BLACK)
-      Ncurses.init_pair(Color::GREEN, Ncurses::COLOR_GREEN, Ncurses::COLOR_BLACK)
-      Ncurses.init_pair(Color::GREEN, Ncurses::COLOR_GREEN, Ncurses::COLOR_BLACK)
-      Ncurses.init_pair(Color::YELLOW, Ncurses::COLOR_YELLOW, Ncurses::COLOR_BLACK)
-      Ncurses.init_pair(Color::BLUE, Ncurses::COLOR_BLUE, Ncurses::COLOR_BLACK)
-      Ncurses.init_pair(Color::MAGENTA, Ncurses::COLOR_MAGENTA, Ncurses::COLOR_BLACK)
-      Ncurses.init_pair(Color::CYAN, Ncurses::COLOR_CYAN, Ncurses::COLOR_BLACK)
-      Ncurses.init_pair(Color::WHITE, Ncurses::COLOR_WHITE, Ncurses::COLOR_BLACK)
+      [
+        [Color::RED, Ncurses::COLOR_RED],
+        [Color::GREEN, Ncurses::COLOR_GREEN],
+        [Color::YELLOW, Ncurses::COLOR_YELLOW],
+        [Color::BLUE, Ncurses::COLOR_BLUE],
+        [Color::MAGENTA, Ncurses::COLOR_MAGENTA],
+        [Color::CYAN, Ncurses::COLOR_CYAN],
+        [Color::WHITE, Ncurses::COLOR_WHITE]
+      ].each do |color, ncurses_color|
+        Ncurses.init_pair(color, ncurses_color, Ncurses::COLOR_BLACK)
+      end
     end
   end
 end
