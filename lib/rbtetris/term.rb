@@ -14,6 +14,11 @@ module RbTetris
       MAGENTA = 5
       CYAN = 6
       WHITE = 7
+      @all = (BLACK..WHITE).to_a.freeze
+
+      class << self
+        attr_reader :all
+      end
     end
 
     # Public: Initialize a new Term. Initialize color pairs if Ncurses has
