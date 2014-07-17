@@ -11,8 +11,8 @@ Simple Tetris game implemented by Ruby.
 - Ubuntu
 
     ``` sh
-    $ sudo apt-get install libncursesw5-dev
-    $ gem install ncursesw
+    sudo apt-get install libncursesw5-dev
+    gem install ncursesw
     ```
 
 - Mac OS X
