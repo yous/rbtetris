@@ -2,7 +2,17 @@
 require "ncursesw"
 
 module RbTetris
-  # Public: Terminal operations.
+  # Public: Terminal operations. Must call terminate before the termination of
+  # program.
+  #
+  # Examples
+  #
+  #   begin
+  #     term = Term.new
+  #     # Do something.
+  #   ensure
+  #     term.terminate
+  #   end
   class Term
     # Public: Colors used in Ncurses.
     module Color
@@ -17,18 +27,20 @@ module RbTetris
       @all = (BLACK..WHITE).to_a.freeze
 
       class << self
+        # Public: Returns the Array of Integer colors available on terminal.
         attr_reader :all
       end
     end
 
     # Public: Initialize a new Term. Initialize color pairs if Ncurses has
-    #         colors.
+    # colors.
     def initialize
       Ncurses.initscr
       initialize_color if Ncurses.has_colors?
     end
 
-    # Public: Terminate Ncurses. Must be called before termination of program.
+    # Public: Terminate Ncurses. Must be called before the termination of
+    # program.
     #
     # Examples
     #
@@ -38,6 +50,8 @@ module RbTetris
     #   ensure
     #     term.terminate
     #   end
+    #
+    # Returns nothing.
     def terminate
       Ncurses.endwin
     end
@@ -45,6 +59,8 @@ module RbTetris
     private
 
     # Internal: Initialize color pairs for Ncurses.
+    #
+    # Returns nothing.
     def initialize_color
       Ncurses.start_color
       [
