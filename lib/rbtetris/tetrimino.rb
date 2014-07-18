@@ -4,12 +4,17 @@ module RbTetris
   # Public: Game pieces for Tetris.
   class Tetrimino
     # Internal: Shape of piece.
-    #
-    # color - The Integer color of Tetrimino.
     class Shape
       # Public: Returns the Integer color of the Tetrimino.
       attr_reader :color
 
+      # Public: Initialize a Shape. Initialize its color.
+      #
+      # color - The Integer color of Tetrimino.
+      #
+      # Examples
+      #
+      #   Shape.new(Term::Color::BLACK)
       def initialize(color)
         @color = color
       end
@@ -35,6 +40,12 @@ module RbTetris
     attr_reader :shape
 
     # Public: Initialize a new Tetrimino. Initialize its shape.
+    #
+    # shape - The Shape one of shapes of Tetrimino.
+    #
+    # Examples
+    #
+    #   Tetrimino.new(Tetrimino::I)
     def initialize(shape)
       @shape = shape
     end
