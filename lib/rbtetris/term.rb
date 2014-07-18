@@ -2,16 +2,12 @@
 require "ncursesw"
 
 module RbTetris
-  # Public: Terminal operations. Must call terminate before the termination of
-  # program.
+  # Public: Terminal operations. Must pass a block to call.
   #
   # Examples
   #
-  #   begin
-  #     term = Term.new
+  #   Term.new do |t|
   #     # Do something.
-  #   ensure
-  #     term.terminate
   #   end
   class Term
     # Public: Colors used in Ncurses.
@@ -35,25 +31,11 @@ module RbTetris
     # Public: Initialize a new Term. Initialize color pairs if Ncurses has
     # colors.
     def initialize
-      Ncurses.initscr
+      stdscr = Ncurses.initscr
       initialize_color if Ncurses.has_colors?
-    end
-
-    # Public: Terminate Ncurses. Must be called before the termination of
-    # program.
-    #
-    # Examples
-    #
-    #   begin
-    #     term = Term.new
-    #     # Do something.
-    #   ensure
-    #     term.terminate
-    #   end
-    #
-    # Returns nothing.
-    def terminate
+      yield
       Ncurses.endwin
+      Ncurses.delscreen(stdscr) unless stdscr.destroyed?
     end
 
     private

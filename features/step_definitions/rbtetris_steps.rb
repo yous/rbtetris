@@ -1,10 +1,8 @@
 # encoding: utf-8
-After do |_scenario|
-  @term.terminate
-end
-
-Given(/^I have a screen$/) do
-  @term = RbTetris::Term.new
+Around do |_scenario, block|
+  RbTetris::Term.new do
+    block.call
+  end
 end
 
 Given(/^I have a Tetrimino$/) do
