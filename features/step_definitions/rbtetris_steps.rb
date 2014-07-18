@@ -5,10 +5,14 @@ Around do |_scenario, block|
   end
 end
 
-Given(/^I have a Tetrimino$/) do
-  @tetrimino = RbTetris::Tetrimino.new
+Given(/^I have a '(.+)' shaped Tetrimino$/) do |shape|
+  @tetrimino = RbTetris::Tetrimino.new(RbTetris::Tetrimino.const_get(shape))
 end
 
-Then(/^the Tetrimino should have a color$/) do
-  assert RbTetris::Term::Color.all.include? @tetrimino.color
+Then(/^the Tetrimino should have a shape$/) do
+  assert RbTetris::Tetrimino.shapes.include? @tetrimino.shape
+end
+
+Then(/^the shape should have the color (.+)$/) do |color|
+  assert_equal RbTetris::Term::Color.const_get(color), @tetrimino.shape.color
 end
