@@ -2,7 +2,8 @@
 
 [![Build Status](https://travis-ci.org/yous/rbtetris.svg?branch=master)](https://travis-ci.org/yous/rbtetris)
 [![Dependency Status](https://gemnasium.com/yous/rbtetris.svg)](https://gemnasium.com/yous/rbtetris)
-[![Coverage Status](https://img.shields.io/coveralls/yous/rbtetris.svg)](https://coveralls.io/r/yous/rbtetris)
+[![Code Climate](https://codeclimate.com/github/yous/rbtetris.png)](https://codeclimate.com/github/yous/rbtetris)
+[![Test Coverage](https://codeclimate.com/github/yous/rbtetris/coverage.png)](https://codeclimate.com/github/yous/rbtetris)
 [![Inline docs](http://inch-ci.org/github/yous/rbtetris.png?branch=master)](http://inch-ci.org/github/yous/rbtetris)
 
 Simple Tetris game implemented by Ruby.

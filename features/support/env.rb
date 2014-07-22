@@ -1,11 +1,8 @@
 # encoding: utf-8
-require "simplecov"
-require "coveralls"
+require "codeclimate-test-reporter"
+CodeClimate::TestReporter.start
 
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
-  SimpleCov::Formatter::HTMLFormatter,
-  Coveralls::SimpleCov::Formatter
-]
+require "simplecov"
 SimpleCov.start
 
 require "rbtetris"
