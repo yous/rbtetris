@@ -34,7 +34,7 @@ module RbTetris
       stdscr = Ncurses.initscr
       initialize_color if Ncurses.has_colors?
       begin
-        yield
+        yield(self)
       ensure
         Ncurses.endwin
         Ncurses.delscreen(stdscr) unless stdscr.destroyed?
