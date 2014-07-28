@@ -18,7 +18,6 @@ Simple Tetris game implemented by Ruby.
 
     ``` sh
     sudo apt-get install libncursesw5-dev
-    gem install ncursesw
     ```
 
 - Mac OS X
@@ -28,10 +27,9 @@ Simple Tetris game implemented by Ruby.
 [Homebrew]: http://brew.sh
 
     ``` sh
-    brew install ncurses
+    brew install homebrew/dupes/ncurses
     brew doctor
     brew link --force ncurses
-    gem install ncursesw
     ```
 
 ## License
