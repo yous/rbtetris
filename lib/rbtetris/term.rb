@@ -2,12 +2,14 @@
 require "ncursesw"
 
 module RbTetris
-  # Public: Terminal operations. Must pass a block to call.
+  # Public: Terminal operations. teardown should be called before termination.
   #
   # Examples
   #
-  #   Term.new do |t|
-  #     # Do something.
+  #   begin
+  #     term = Term.new
+  #   ensure
+  #     term.teardown
   #   end
   class Term
     # Public: Colors used in Ncurses.
@@ -31,14 +33,15 @@ module RbTetris
     # Public: Initialize a new Term. Initialize color pairs if Ncurses has
     # colors.
     def initialize
-      stdscr = Ncurses.initscr
+      @stdscr = Ncurses.initscr
       initialize_color if Ncurses.has_colors?
-      begin
-        yield(self)
-      ensure
-        Ncurses.endwin
-        Ncurses.delscreen(stdscr) unless stdscr.destroyed?
-      end
+    end
+
+    # Public: Teardown the Term. Must be called before termination of the
+    # program.
+    def teardown
+      Ncurses.endwin
+      Ncurses.delscreen(@stdscr) unless @stdscr.destroyed?
     end
 
     private

@@ -1,8 +1,10 @@
 # encoding: utf-8
-Around do |_scenario, block|
-  RbTetris::Term.new do
-    block.call
-  end
+Before do
+  @term = RbTetris::Term.new
+end
+
+After do
+  @term.teardown
 end
 
 Given(/^I have a color (.+)$/) do |color|
