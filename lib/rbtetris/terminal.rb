@@ -25,7 +25,7 @@ module RbTetris
       @all = (BLACK..WHITE).to_a.freeze
 
       class << self
-        # Public: Returns the Array of Integer colors available on terminal.
+        # Internal: Returns the Array of Integer colors available on terminal.
         attr_reader :all
       end
     end
