@@ -8,5 +8,5 @@ Cucumber::Rake::Task.new(:features)
 
 require "rubocop/rake_task"
 RuboCop::RakeTask.new(:rubocop) do |rubocop|
-  rubocop.formatters = %w(simple offenses)
+  rubocop.formatters = %w(progress offenses)
 end
