@@ -1,5 +1,4 @@
 # encoding: utf-8
-
 module RbTetris
   # Public: Game pieces for Tetris.
   class Tetrimino
@@ -19,8 +18,6 @@ module RbTetris
         @color = color
       end
     end
-
-    public
 
     I = Shape.new(Terminal::Color::CYAN)
     J = Shape.new(Terminal::Color::BLUE)
