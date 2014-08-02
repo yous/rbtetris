@@ -7,7 +7,7 @@ SimpleCov.start
 
 require "rbtetris"
 
-# Public: Helper methods for Cucumber.
+# Internal: Helper methods for Cucumber.
 module RbTetrisWorld
   def silence_warnings
     old_verbose, $VERBOSE = $VERBOSE, nil

@@ -2,6 +2,6 @@
 require "rbtetris/terminal"
 require "rbtetris/tetrimino"
 
-# Public: Simple Tetris game implemented by Ruby
+# Internal: Simple Tetris game implemented by Ruby.
 module RbTetris
 end
