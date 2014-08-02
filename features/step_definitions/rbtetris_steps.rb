@@ -1,6 +1,6 @@
 # encoding: utf-8
 Before do
-  silence_warnings { @term = RbTetris::Term.new }
+  silence_warnings { @term = RbTetris::Terminal.new }
 end
 
 After do
@@ -8,7 +8,7 @@ After do
 end
 
 Given(/^I have a color (.+)$/) do |color|
-  @color = RbTetris::Term::Color.const_get(color)
+  @color = RbTetris::Terminal::Color.const_get(color)
 end
 
 Given(/^I have a '(.+)' shaped Tetrimino$/) do |shape|
@@ -16,7 +16,7 @@ Given(/^I have a '(.+)' shaped Tetrimino$/) do |shape|
 end
 
 Then(/^the color should be declared$/) do
-  assert RbTetris::Term::Color.all.include?(@color)
+  assert RbTetris::Terminal::Color.all.include?(@color)
 end
 
 Then(/^the Tetrimino should have a shape$/) do
@@ -24,5 +24,6 @@ Then(/^the Tetrimino should have a shape$/) do
 end
 
 Then(/^the shape should have the color (.+)$/) do |color|
-  assert_equal RbTetris::Term::Color.const_get(color), @tetrimino.shape.color
+  assert_equal RbTetris::Terminal::Color.const_get(color),
+               @tetrimino.shape.color
 end

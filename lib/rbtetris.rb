@@ -1,5 +1,5 @@
 # encoding: utf-8
-require "rbtetris/term"
+require "rbtetris/terminal"
 require "rbtetris/tetrimino"
 
 # Public: Simple Tetris game implemented by Ruby

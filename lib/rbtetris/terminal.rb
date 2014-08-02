@@ -7,11 +7,11 @@ module RbTetris
   # Examples
   #
   #   begin
-  #     term = Term.new
+  #     terminal = Terminal.new
   #   ensure
-  #     term.teardown
+  #     terminal.teardown
   #   end
-  class Term
+  class Terminal
     # Public: Colors used in Ncurses.
     module Color
       BLACK = 0
@@ -30,14 +30,14 @@ module RbTetris
       end
     end
 
-    # Public: Initialize a new Term. Initialize color pairs if Ncurses has
+    # Public: Initialize a new Terminal. Initialize color pairs if Ncurses has
     # colors.
     def initialize
       @stdscr = Ncurses.initscr
       initialize_color if Ncurses.has_colors?
     end
 
-    # Public: Teardown the Term. Must be called before termination of the
+    # Public: Teardown the Terminal. Must be called before termination of the
     # program.
     def teardown
       Ncurses.endwin

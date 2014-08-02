@@ -14,7 +14,7 @@ module RbTetris
       #
       # Examples
       #
-      #   Shape.new(Term::Color::BLACK)
+      #   Shape.new(Terminal::Color::BLACK)
       def initialize(color)
         @color = color
       end
@@ -22,13 +22,13 @@ module RbTetris
 
     public
 
-    I = Shape.new(Term::Color::CYAN)
-    J = Shape.new(Term::Color::BLUE)
-    L = Shape.new(Term::Color::YELLOW)
-    O = Shape.new(Term::Color::WHITE)
-    S = Shape.new(Term::Color::GREEN)
-    T = Shape.new(Term::Color::MAGENTA)
-    Z = Shape.new(Term::Color::RED)
+    I = Shape.new(Terminal::Color::CYAN)
+    J = Shape.new(Terminal::Color::BLUE)
+    L = Shape.new(Terminal::Color::YELLOW)
+    O = Shape.new(Terminal::Color::WHITE)
+    S = Shape.new(Terminal::Color::GREEN)
+    T = Shape.new(Terminal::Color::MAGENTA)
+    Z = Shape.new(Terminal::Color::RED)
     @shapes = [I, J, L, O, S, T, Z].to_a.freeze
 
     class << self
