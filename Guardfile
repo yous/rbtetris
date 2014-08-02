@@ -12,5 +12,8 @@ group :specs, :halt_on_fail => true do
   guard :rubocop do
     watch(/.+\.rb$/)
     watch(/(?:.+\/)?\.rubocop\.yml$/) { |m| File.dirname(m[0]) }
+    watch(/(?:.+\/)?Gemfile$/)
+    watch(/(?:.+\/)?Guardfile$/)
+    watch(/(?:.+\/)?Rakefile$/)
   end
 end
