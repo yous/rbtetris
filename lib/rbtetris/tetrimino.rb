@@ -1,13 +1,13 @@
 # encoding: utf-8
 module RbTetris
-  # Internal: Game pieces for Tetris.
+  # Game pieces for Tetris.
   class Tetrimino
-    # Internal: Shape of piece.
+    # Shape of piece.
     class Shape
-      # Internal: Returns the Integer color of the Tetrimino.
+      # Returns the Integer color of the Tetrimino.
       attr_reader :color
 
-      # Internal: Initialize a Shape. Initialize its color.
+      # Initialize a Shape. Initialize its color.
       #
       # color - The Integer color of Tetrimino.
       #
@@ -29,14 +29,14 @@ module RbTetris
     @shapes = [I, J, L, O, S, T, Z].to_a.freeze
 
     class << self
-      # Internal: Returns the Array of Shapes for Tetrimino.
+      # Returns the Array of Shapes for Tetrimino.
       attr_reader :shapes
     end
 
-    # Internal: Returns the Shape of Tetrimino.
+    # Returns the Shape of Tetrimino.
     attr_reader :shape
 
-    # Internal: Initialize a new Tetrimino. Initialize its shape.
+    # Initialize a new Tetrimino. Initialize its shape.
     #
     # shape - The Shape one of shapes of Tetrimino.
     #

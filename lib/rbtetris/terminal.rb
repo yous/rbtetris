@@ -2,7 +2,7 @@
 require "ncursesw"
 
 module RbTetris
-  # Internal: Terminal operations. teardown should be called before termination.
+  # Terminal operations. teardown should be called before termination.
   #
   # Examples
   #
@@ -12,7 +12,7 @@ module RbTetris
   #     terminal.teardown
   #   end
   class Terminal
-    # Internal: Colors used in Ncurses.
+    # Colors used in Ncurses.
     module Color
       BLACK = 0
       RED = 1
@@ -25,20 +25,18 @@ module RbTetris
       @all = (BLACK..WHITE).to_a.freeze
 
       class << self
-        # Internal: Returns the Array of Integer colors available on terminal.
+        # Returns the Array of Integer colors available on terminal.
         attr_reader :all
       end
     end
 
-    # Internal: Initialize a new Terminal. Initialize color pairs if Ncurses has
-    # colors.
+    # Initialize a new Terminal. Initialize color pairs if Ncurses has colors.
     def initialize
       @stdscr = Ncurses.initscr
       initialize_color if Ncurses.has_colors?
     end
 
-    # Internal: Teardown the Terminal. Must be called before termination of the
-    # program.
+    # Teardown the Terminal. Must be called before termination of the program.
     def teardown
       Ncurses.endwin
       Ncurses.delscreen(@stdscr) unless @stdscr.destroyed?
@@ -46,7 +44,7 @@ module RbTetris
 
     private
 
-    # Internal: Initialize color pairs for Ncurses.
+    # Initialize color pairs for Ncurses.
     #
     # Returns nothing.
     def initialize_color
