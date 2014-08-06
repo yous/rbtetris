@@ -9,8 +9,5 @@ AllCops:
 Style/Encoding:
   Enabled: true
 
-Style/MethodCalledOnDoEndBlock:
-  Enabled: true
-
 Style/StringLiterals:
   EnforcedStyle: double_quotes
