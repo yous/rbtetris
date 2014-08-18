@@ -8,7 +8,7 @@ group :development, :test do
   gem "rake", "~> 10.1", require: false
   gem "cucumber", "~> 1.3.15", require: false
   gem "simplecov", "~> 0.9.0", require: false
-  gem "rubocop", "~> 0.24.1", require: false
+  gem "rubocop", "~> 0.25.0", require: false
 
   gem "guard", "~> 2.6.1", require: false
   gem "guard-cucumber", "~> 1.4.1", require: false
