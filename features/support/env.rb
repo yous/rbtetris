@@ -1,11 +1,11 @@
 # encoding: utf-8
-require "codeclimate-test-reporter"
+require 'codeclimate-test-reporter'
 CodeClimate::TestReporter.start
 
-require "simplecov"
+require 'simplecov'
 SimpleCov.start
 
-require "rbtetris"
+require 'rbtetris'
 
 # Helper methods for Cucumber.
 module RbTetrisWorld

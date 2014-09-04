@@ -1,5 +1,5 @@
 # encoding: utf-8
-require "ncursesw"
+require 'ncursesw'
 
 module RbTetris
   # Terminal operations. teardown should be called before termination.
