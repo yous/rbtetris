@@ -1,10 +1,12 @@
 # encoding: utf-8
 require 'simplecov'
-require 'codeclimate-test-reporter'
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
-  SimpleCov::Formatter::HTMLFormatter,
-  CodeClimate::TestReporter::Formatter
-]
+if ENV['CODECLIMATE_REPO_TOKEN']
+  require 'codeclimate-test-reporter'
+  SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
+    SimpleCov::Formatter::HTMLFormatter,
+    CodeClimate::TestReporter::Formatter
+  ]
+end
 SimpleCov.start do
   add_filter '/features/'
 end
