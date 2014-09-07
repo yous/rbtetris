@@ -1,4 +1,5 @@
 # encoding: utf-8
+
 group :specs, halt_on_fail: true do
   guard :cucumber, cli: '--profile default', all_on_start: false do
     watch(/^features\/.+\.feature$/)

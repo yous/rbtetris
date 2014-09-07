@@ -1,4 +1,5 @@
 # encoding: utf-8
+
 module RbTetris
   # Game pieces for Tetris.
   class Tetrimino

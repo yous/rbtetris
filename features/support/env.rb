@@ -1,4 +1,5 @@
 # encoding: utf-8
+
 require 'simplecov'
 if ENV['CODECLIMATE_REPO_TOKEN']
   require 'codeclimate-test-reporter'

@@ -1,4 +1,5 @@
 # encoding: utf-8
+
 Before do
   silence_warnings { @term = RbTetris::Terminal.new }
 end
