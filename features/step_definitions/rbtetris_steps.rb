@@ -12,19 +12,19 @@ Given(/^I have a color (.+)$/) do |color|
   @color = RbTetris::Terminal::Color.const_get(color)
 end
 
-Given(/^I have a '(.+)' shaped Tetrimino$/) do |shape|
-  @tetrimino = RbTetris::Tetrimino.new(RbTetris::Tetrimino.const_get(shape))
+Given(/^I have a '(.+)' Tetrimino$/) do |info|
+  @tetrimino = RbTetris::Tetrimino.new(RbTetris::Tetrimino.const_get(info))
 end
 
 Then(/^the color should be declared$/) do
   assert RbTetris::Terminal::Color.all.include?(@color)
 end
 
-Then(/^the Tetrimino should have a shape$/) do
-  assert RbTetris::Tetrimino.shapes.include? @tetrimino.shape
+Then(/^the Tetrimino should have a info$/) do
+  assert RbTetris::Tetrimino.infos.include?(@tetrimino.info)
 end
 
-Then(/^the shape should have the color (.+)$/) do |color|
+Then(/^it should have the color (.+)$/) do |color|
   assert_equal RbTetris::Terminal::Color.const_get(color),
-               @tetrimino.shape.color
+               @tetrimino.info.color
 end
